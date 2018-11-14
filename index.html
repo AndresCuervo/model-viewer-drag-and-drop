@@ -2,7 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+
+        <!-- Web Components polyfill is required to support Edge and Firefox < 63: -->
+        <script src="./js/webcomponents-loader.js"></script>
+        <!-- Resize Observer polyfill is required for non-Chrome browsers: -->
+        <script src="./js/ResizeObserver.js"></script>
+        <!-- Intersection Observer polyfill is required for Safari and IE11 -->
+        <script src="./js/intersection-observer.js"></script>
+        <!-- Fullscreen polyfill is required for using experimental AR features in Canary: -->
+        <script src="./js/fullscreen.polyfill.js"></script>
+        <script src="./js/model-viewer.js"></script>
         <title>Drag And Drop Model Viewer</title>
         <style>
             body {
@@ -41,7 +50,7 @@
             Reference model from <a href="https://threejs.org/examples/#misc_exporter_gltf">this Three.js example</a>
         </p>
 
-        <script src="responsiveViewer.js"></script>
-        <script src="handleDrag.js"></script>
+        <script src="./js/responsiveViewer.js"></script>
+        <script src="./js/handleDrag.js"></script>
     </body>
 </html>
