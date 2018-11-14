@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+        <title>Drag And Drop Model Viewer</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                font-size: 18px;
+                padding: 1% 0;
+                margin: 0;
+                color: white;
+                background-color: black;
+            }
+            p, h1 {  padding: 0 5%; }
+            model-viewer {
+                width: 100%;
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+            }
+            model-viewer:hover {
+                cursor: grab;
+            }
+            a { color: #89c4f4 }
+            a:visited { color: #be90d4 }
+            code {
+                font-family: Roboto, "Courier New";
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Try dropping a <code>.gltf</code> or <code>.glb</code> model below! </h1>
+
+        <model-viewer auto-rotate controls background-color="black" width="100%" src="./assets/exported-example-scene.gltf" ondrop="loadDroppedModel(event);" ondragover="dragover_handler(event);"></model-viewer>
+
+        <p>
+            This was made using <a href="https://github.com/GoogleWebComponents/model-viewer"><code>&lt;model-viewer&gt;</code></a>, a <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">web component</a> for loading 3D models on the web!
+        </p>
+        <p>
+            Reference model from <a href="https://threejs.org/examples/#misc_exporter_gltf">this Three.js example</a>
+        </p>
+
+        <script src="responsiveViewer.js"></script>
+        <script src="handleDrag.js"></script>
+    </body>
+</html>
